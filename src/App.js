@@ -1,18 +1,15 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 
-import reducer from './reducer';
 import CountItem from './CountItem';
-import AppContext from './AppContext';
+import Layout from './Layout';
 
 
 const App = () => {
 
-  const [state, dispatch] = useReducer(reducer, 0);
-  
   return (
-    <AppContext.Provider value={{ state, dispatch }}>
-      <CountItem />
-    </AppContext.Provider>
+      <Layout>
+        <CountItem />
+      </Layout>
   );
 }
 
